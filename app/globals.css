@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode */
+    --background: 255 255 255;
+    --foreground: 20 20 20;
+    
+    /* Brand colors */
+    --brand-purple: 79 50 194; /* #4f32c2 */
+    --brand-purple-light: 211 163 255; /* #d3a3ff */
+    
+    /* UI Elements */
+    --card-bg: 255 255 255;
+    --card-border: 229 231 235;
+    --card-hover: 243 244 246;
+    
+    /* Text */
+    --text-primary: 17 24 39;
+    --text-secondary: 107 114 128;
+    --text-accent: 79 50 194;
+    
+    /* Status */
+    --success: 34 197 94;
+    --warning: 234 179 8;
+    --error: 239 68 68;
+    
+    /* Charts */
+    --chart-1: 79 50 194;
+    --chart-2: 211 163 255;
+    --chart-3: 167 139 250;
+    --chart-4: 196 181 253;
+    --chart-5: 233 213 255;
+  }
+
+  .dark {
+    /* Dark mode */
+    --background: 26 26 26;
+    --foreground: 255 255 255;
+    
+    /* UI Elements */
+    --card-bg: 38 38 38;
+    --card-border: 64 64 64;
+    --card-hover: 64 64 64;
+    
+    /* Text */
+    --text-primary: 255 255 255;
+    --text-secondary: 156 163 175;
+    --text-accent: 211 163 255;
+    
+    /* Status colors remain the same for consistency */
+    --success: 34 197 94;
+    --warning: 234 179 8;
+    --error: 239 68 68;
+    
+    /* Charts */
+    --chart-1: 79 50 194;
+    --chart-2: 211 163 255;
+    --chart-3: 167 139 250;
+    --chart-4: 196 181 253;
+    --chart-5: 233 213 255;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(79, 50, 194, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(79, 50, 194, 0.5);
+}
